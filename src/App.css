@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  background: #f3f5f8;
+}
+
+button {
+  border: 0;
+  background: #2563eb;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.top-toolbar {
+  height: 64px;
+  background: #111827;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.top-toolbar strong {
+  margin-right: 16px;
+  font-size: 18px;
+}
+
+.main-layout {
+  height: calc(100vh - 64px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 12px;
+}
+
+.panel {
+  min-width: 0;
+  min-height: 0;
+  background: white;
+  border: 1px solid #d9dee8;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.panel-header {
+  height: 58px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.panel-header span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.design-canvas {
+  width: 100%;
+  height: calc(100% - 58px);
+  background-color: #f8fafc;
+  background-image:
+    linear-gradient(#e5e7eb 1px, transparent 1px),
+    linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.paper-rect {
+  fill: #dbeafe;
+  stroke: #2563eb;
+  stroke-width: 2;
+  cursor: pointer;
+}
+
+.paper-rect-selected {
+  fill: #bfdbfe;
+  stroke: #ef4444;
+  stroke-width: 3;
+}
+
+.rect-label {
+  font-size: 14px;
+  fill: #111827;
+  pointer-events: none;
+  font-weight: 700;
+}
+
+.three-placeholder {
+  height: calc(100% - 58px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 18px;
+}
+
+.paper-shape-group {
+  touch-action: none;
+}
+
+.status-panel {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  width: 240px;
+  background: rgba(17, 24, 39, 0.92);
+  color: white;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  pointer-events: auto;
+}
+
+.status-panel strong {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.status-panel label {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.status-panel input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  padding: 0 8px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 13px;
+}
+
+.resize-handle {
+  fill: #ffffff;
+  stroke: #ef4444;
+  stroke-width: 2;
+  cursor: nwse-resize;
+}
+
+.connection-line {
+  stroke: #22c55e;
+  stroke-width: 6;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.three-canvas {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 58px);
+  overflow: hidden;
+}
+
+.three-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.three-canvas canvas {
+  cursor: grab;
+}
+
+.three-canvas canvas:active {
+  cursor: grabbing;
+}
